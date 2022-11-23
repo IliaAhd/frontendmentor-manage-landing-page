@@ -15,19 +15,26 @@
     <header class="primary-header">
       <!-- Header logo -->
       <div class="container">
-        <a href="#"><img src="images/logo.svg" alt="Manage"></a>
-        <!-- Header nav -->
-        <nav class="primary-navigation">
-          <ul role="list" class="nav-list" aria-label="primary">
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Community</a></li>
-          </ul>
-        </nav>
-        <!-- Header button -->
-        <button class="button">Get Started</button>
+        <div class="nav-wrapper">
+          <a href="#"><img src="images/logo.svg" alt="Manage"></a>
+          <!-- Header nav -->
+          <button class="mobile-nav-button" aria-controls="primary-nav" aria-expanded="false">
+            <img class="icon-ham" src="images/icon-hamburger.svg" alt="" aria-hidden="true">
+            <img class="icon-close" src="images/icon-close.svg" alt="" aria-hidden="true">
+            <span class="hidden">Menu</span>
+          </button>
+          <nav class="primary-navigation">
+            <ul role="list" class="nav-list" aria-label="primary" id="primary-navigation">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Product</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Community</a></li>
+            </ul>
+          </nav>
+          <!-- Header button -->
+          <button class="button" style="display: none;">Get Started</button>
+        </div>
       </div>
     </header>
 
