@@ -239,12 +239,10 @@ body {
 }
 
 .mobile-nav-button {
-  display: block;
-  position: fixed;
-  top: calc(var(--size-500) + 2px);
+  position: sticky;
   right: var(--size-600);
-  cursor: pointer;
   background: transparent;
+  cursor: pointer;
   border: 0;
   padding: 0.5em;
   display: none;
