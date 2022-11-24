@@ -102,7 +102,7 @@ select {
   --fs-600: 1rem;
   --fs-700: 1.875rem;
   --fs-800: 2.5rem;
-  --fs-900: 2.5rem;
+  --fs-900: 3rem;
 
   --fs-body: var(--fs-400);
   --fs-primary-heading: var(--fs-800);
@@ -123,8 +123,8 @@ select {
 
 @media (min-width: 50em) {
   :root {
-    --fs-600: 2.5rem;
-    --fs-700: 3.5rem;
+    --fs-600: 1.1rem;
+    --fs-700: 2rem;
 
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-800);
@@ -132,8 +132,6 @@ select {
     --fs-nav: var(--fs-300);
   }
 }
-
-
 
 /* general styles */
 
@@ -218,7 +216,7 @@ body {
   }
 
   .primary-header[data-overlay]::before {
-    content: '';
+    content: "";
     position: fixed;
     inset: 0;
     background: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
@@ -232,7 +230,7 @@ body {
   }
 
   .mobile-nav-button {
-    display: block!important;
+    display: block !important;
   }
 }
 
@@ -259,15 +257,40 @@ body {
 /* Utility classes */
 .hidden {
   position: absolute;
-position: absolute !important;
-width: 1px !important;
-height: 1px !important;
-padding: 0 !important;
-margin: -1px !important;
-overflow: hidden !important;
-clip: rect(0,0,0,0) !important;
-white-space: nowrap !important;
-border: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - var(--padding) * 2);
+  margin-inline: auto;
+}
+
+/*this select everything except first thing */
+.flow > * + * {
+  margin-top: var(--flow-spacer, 4em);
+}
+
+.even-cols {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .even-cols {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
 }
 
 /* text colors */
@@ -355,31 +378,12 @@ border: 0 !important;
 }
 
 .sm-none {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 50em) {
   .md-inline-flex {
     display: inline-flex;
-  } 
-}
-
-.container {
-  --max-width: 1110px;
-  --padding: 1rem;
-
-  width: min(var(--max-width), 100% - var(--padding) * 2);
-  margin-inline: auto;
-}
-
-.even-cols {
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 50em) {
-  .even-cols {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
   }
 }
+
