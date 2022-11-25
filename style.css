@@ -239,8 +239,9 @@ body {
 }
 
 .mobile-nav-button {
-  position: sticky;
+  position: absolute;
   right: var(--size-600);
+  top: var(--size-500);
   background: transparent;
   cursor: pointer;
   border: 0;
@@ -248,9 +249,7 @@ body {
   display: none;
 }
 
-.mobile-nav-button .icon-close {
-  display: none;
-}
+
 
 /* Utility classes */
 .hidden {
@@ -384,4 +383,3 @@ body {
     display: inline-flex;
   }
 }
-

@@ -12,12 +12,14 @@ navToggle.addEventListener("click", function () {
   primaryHeader.toggleAttribute("data-overlay");
 });
 
-iconHam.addEventListener("click", function () {
-  IconClose.style.display = 'block';
-  iconHam.style.display = 'none';
-});
+function showCloseIcon() {
+  if (!iconHam.classList.contains('hidden')) {
+    iconHam.classList.add('hidden');
+    IconClose.classList.remove('hidden');
+  } else if(iconHam.classList.contains('hidden')) {
+    iconHam.classList.remove('hidden');
+    IconClose.classList.add('hidden');
+  }
+}
 
-IconClose.addEventListener("click", function () {
-  IconClose.style.display = 'none';
-  iconHam.style.display = 'block';
-});
+navToggle.addEventListener('click', showCloseIcon);
