@@ -222,6 +222,7 @@ p[data-width="wide"] {
     border-radius: var(--size-100);
     padding: var(--size-700);
     box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+    z-index: 1;
   }
 
   .primary-header[data-overlay]::before {
