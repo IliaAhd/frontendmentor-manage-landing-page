@@ -267,6 +267,12 @@ p[data-width="wide"] {
   text-align: center;
 }
 
+@media (min-width: 50rem) {
+  .cta {
+    text-align: left;
+  }
+}
+
 .cta::before {
   content: "";
   position: absolute;
@@ -274,7 +280,7 @@ p[data-width="wide"] {
   z-index: -1;
   background-image: url("images/bg-tablet-pattern.svg"),
     url("images/bg-tablet-pattern.svg");
-  background-position: -15rem -5rem, 80rem -42rem;
+  background-position: -15rem -5rem, 50rem -42rem;
   background-repeat: no-repeat;
   opacity: 0.1;
 }
@@ -315,10 +321,16 @@ p[data-width="wide"] {
 
 .vertical-align-center {
   align-items: center;
+} 
+
+.justify-self {
+  justify-self: center;
 }
 
-.push-right {
-  margin-left: auto;
+@media (min-width: 50em) {
+  .justify-self {
+    justify-self: end;
+  } 
 }
 
 /*this select everything except first thing */
