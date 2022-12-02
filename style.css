@@ -176,6 +176,7 @@ p[data-width="wide"] {
 .button[data-type="inverted"]:focus-visible {
   color: var(--clr-accent-400);
   background: var(--clr-neutral-100);
+  display: flex;
 }
 
 .button[data-type="inverted"]:hover,
@@ -259,8 +260,6 @@ p[data-width="wide"] {
   display: none;
 }
 
-
-
 /* Utility classes */
 .hidden {
   position: absolute;
@@ -283,11 +282,6 @@ p[data-width="wide"] {
   margin-inline: auto;
 }
 
-/*this select everything except first thing */
-.flow > * + * {
-  margin-top: var(--flow-spacer, 4em);
-}
-
 .even-cols {
   display: grid;
   gap: 1rem;
@@ -298,6 +292,19 @@ p[data-width="wide"] {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+/*this select everything except first thing */
+.flow > * + * {
+  margin-top: var(--flow-spacer, 4em);
 }
 
 /* text colors */
