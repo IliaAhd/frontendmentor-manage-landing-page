@@ -260,6 +260,25 @@ p[data-width="wide"] {
   display: none;
 }
 
+/* cta  */
+.cta {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("images/bg-tablet-pattern.svg"),
+    url("images/bg-tablet-pattern.svg");
+  background-position: -15rem -5rem, 80rem -42rem;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+}
+
 /* Utility classes */
 .hidden {
   position: absolute;
