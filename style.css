@@ -260,6 +260,35 @@ p[data-width="wide"] {
   display: none;
 }
 
+/* footer navigation  */
+.footer-nav {
+  columns: 2;
+}
+
+.footer-nav a {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+}
+
+.footer-nav a:where(:hover, :focus) {
+  color: var(--clr-accent-400);
+}
+
+.social-list {
+  display: flex;
+  gap: var(--size-300);
+}
+
+.social-icons {
+  width: var(--size-600);
+}
+
+@media (min-width: 50rem) {
+  .social-icons {
+    width: var(--size-500);
+  }
+}
+
 /* cta  */
 .cta {
   position: relative;
