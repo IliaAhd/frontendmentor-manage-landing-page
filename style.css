@@ -306,6 +306,8 @@ input[type='email'] {
 
 .form {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-nav {
@@ -329,7 +331,16 @@ input[type='email'] {
   margin-block: 1.5rem;
 }
 
-@media (min-width: 50rem) {
+@media (max-width: 50em) {
+  .primary-footer-nav {
+    display: none;
+  }
+  .secondary-footer-nav {
+    display: block;
+  }
+}
+
+@media (min-width: 50em) {
   .footer-nav {
     display: flex;
     flex-direction: row;
@@ -338,14 +349,9 @@ input[type='email'] {
   .secondary-footer-nav {
     display: none;
   }
-}
-
-@media (max-width: 50em) {
-  .primary-footer-nav {
-    display: none;
-  }
-  .secondary-footer-nav {
-    display: block;
+  .form {
+    display: flex;
+    flex-wrap: nowrap;
   }
 }
 
@@ -372,6 +378,59 @@ input[type='email'] {
   background-position: -15rem -5rem, 50rem -42rem;
   background-repeat: no-repeat;
   opacity: 0.1;
+}
+
+/* Numbered items  */
+.numbered-items {
+  counter-reset: count;
+
+}
+
+.numbered-items li {
+  counter-increment: count;
+}
+
+.numbered-items div {
+  display: grid;
+  align-items: center;
+  column-gap: var(--size-400);
+  grid-template-columns: min-content 1fr;
+  position: relative;
+}
+
+@media (max-width: 50em) {
+  .numbered-items div::after {
+    content: "";
+    background-color: var(--clr-accent-400);
+    opacity: .1;
+    position: absolute;
+    inset: 0;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    border-radius: 100vw 0 0 100vw;
+  }
+}
+
+.numbered-items p {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 30em) {
+  .numbered-items p {
+    grid-column: 2 / -1;
+  }
+}
+
+.numbered-items div::before {
+  content: "0" counter(count);
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  padding: var(--size-200) var(--size-500);
+  border-radius: 100vw;
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 /* Utility classes */
@@ -534,7 +593,6 @@ input[type='email'] {
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .sm-none {
   display: none;
