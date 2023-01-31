@@ -143,14 +143,28 @@ body {
 
 p:not([class]) {
   opacity: 0.7;
-  max-width: 32ch;
+  text-align: center;
+}
+
+@media (min-width: 50em) {
+  p:not([class]) {
+    max-width: 32ch;
+    text-align: start;
+  }
 }
 
 p[data-width="wide"] {
   max-width: 100%;
 }
 
-input[type='email'] {
+@media (max-width: 50em) {
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+
+input[type="email"] {
   display: inline-flex;
   height: 2.8438rem;
   border: 0;
@@ -159,7 +173,7 @@ input[type='email'] {
   line-height: 1;
   font-weight: var(--fw-bold);
   font-size: var(--fs-button);
-  margin-inline-end: .5rem;
+  margin-inline-end: 0.5rem;
 }
 
 /* button  */
@@ -194,6 +208,13 @@ input[type='email'] {
 .button[data-type="inverted"]:hover,
 .button[data-type="inverted"]:focus-visible {
   color: var(--clr-accent-300);
+}
+
+@media (max-width: 50em) {
+  .button-center {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* nav  */
@@ -285,12 +306,12 @@ input[type='email'] {
 .social-list {
   display: flex;
   align-items: center;
-  gap: var(--size-600);  
+  gap: var(--size-600);
 }
 
 .social-icons {
   display: inline;
-  margin-inline: .2rem;
+  margin-inline: 0.2rem;
 }
 
 @media (min-width: 50rem) {
@@ -383,7 +404,8 @@ input[type='email'] {
 /* Numbered items  */
 .numbered-items {
   counter-reset: count;
-
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .numbered-items li {
@@ -402,7 +424,7 @@ input[type='email'] {
   .numbered-items div::after {
     content: "";
     background-color: var(--clr-accent-400);
-    opacity: .1;
+    opacity: 0.1;
     position: absolute;
     inset: 0;
     grid-column: 1 / -1;
@@ -476,7 +498,7 @@ input[type='email'] {
 
 .vertical-align-center {
   align-items: center;
-} 
+}
 
 .justify-self {
   justify-self: center;
@@ -487,7 +509,6 @@ input[type='email'] {
   justify-content: space-around;
 }
 
-
 @media (min-width: 50em) {
   .justify-self {
     justify-self: end;
@@ -496,11 +517,10 @@ input[type='email'] {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center;   
+    justify-content: center;
   }
 }
 
-/*this select everything except first thing */
 .flow > * + * {
   margin-top: var(--flow-spacer, 4em);
 }
@@ -603,6 +623,6 @@ input[type='email'] {
     display: inline-flex;
   }
   .left-auto {
-   margin-right: auto;
+    margin-right: auto;
   }
 }
