@@ -16,3 +16,13 @@ navToggle.addEventListener("click", function () {
   iconHam.classList.toggle("hidden");
   iconClose.classList.toggle("hidden");
 });
+
+const slider = new A11YSlider(document.querySelector('.slider'), {
+  adaptiveHeight: true,
+  dots: true,
+  responsive: {
+    800: {
+      dots: false // dots enabled 1280px and up
+    }
+  }
+});
